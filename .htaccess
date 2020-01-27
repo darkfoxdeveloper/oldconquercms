@@ -1,0 +1,7 @@
+#You can configure Friendly URL in this file
+RewriteEngine On
+RewriteBase /
+RewriteRule ^register$ register.php [L]
+RewriteRule ^downloads$ downloads.php [L]
+RewriteRule ^buy$ buy.php [L]
+RewriteRule ^ranking$ ranking.php [L]

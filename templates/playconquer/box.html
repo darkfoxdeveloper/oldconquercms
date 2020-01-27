@@ -1,0 +1,19 @@
+{#
+    Helper: Box
+    Owner: darkfoxdeveloper@gmail.com
+    You can use this helper for generate Box in other template files
+#}
+{% macro generate(header, body, footer) %}
+    <div class="row mb-2">
+        <div class="col-12 center-heading">
+            <h2>{{ header | raw }}</h2>
+            <span class="center-line"></span>
+        </div>
+        <div class="col-12">
+            {{ body | raw }}
+        </div>
+        <div class="col-12 text-right">
+            {{ footer | raw }}
+        </div>
+    </div>
+{% endmacro %}

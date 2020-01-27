@@ -1,0 +1,15 @@
+{#
+    Section: Page
+    Owner: darkfoxdeveloper@gmail.com
+#}
+{% import 'box.html' as box %}
+{% include 'head.html' %}
+<!-- #BEGIN | CONTENT OF CUSTOM PAGE -->
+    <div id="content" class="row text-center">
+        <div class="col-xs-12 col-lg-9 p-0">
+        	{{box.generate('Name of page', 'Description', '')}}
+        </div>
+    </div>
+</div>
+<!-- #END | CONTENT OF CUSTOM PAGE -->
+{% include 'footer.html' %}

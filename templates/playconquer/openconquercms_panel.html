@@ -1,0 +1,29 @@
+{#
+    Section: Index
+    Owner: darkfoxdeveloper@gmail.com
+#}
+{% import 'box.html' as box %}
+{% include 'head.html' %}
+<!-- #BEGIN | CONTENT OF OCCMS PANEL PAGE -->
+    <div id="content" class="row text-center">
+        <div class="mx-auto p-0">
+             <div class="row mb-2">
+                <div class="col-12 center-heading">
+                    <h2>OpenConquerCMS Panel</h2>
+                    <span class="center-line"></span>
+                </div>
+                <div class="col-12">
+                    {{ OCCMSPanel | raw }}
+                    {% if message is defined %}
+                        {{message|raw}}
+                    {% endif %}
+                </div>
+                <div class="col-12 text-right">
+                   <div class="col-12 pl-5 pr-5"><div class="float-left"><font color="darkgreen">OpenConquerCMS: Version {{constant("VERSION")}}</font></div><div class="float-right">{% if occms_user is not null %}<a href="openconquercms_panel.php?logout=true"><button type="button" class="btn btn-dark btn-xs text-warning"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</button></a>{% endif %}</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #END | CONTENT OF OCCMS PANEL PAGE -->
+{% include 'footer.html' %}

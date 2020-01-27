@@ -1,0 +1,18 @@
+{#
+    Section: Login
+    Owner: darkfoxdeveloper@gmail.com
+#}
+<form action="" method="post" class="mr-auto col-md-12">
+    <div class="input-group mb-3">
+        <span class="input-group-addon" id="username-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+        <input name="user" class="form-control" placeholder="{{ lang["LOGIN_ACCOUNT_LABEL"] }}" value="" type="text" aria-label="Username" aria-describedby="username-addon">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-addon" id="pwd-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+        <input name="pass" class="form-control" placeholder="{{ lang["LOGIN_PASSWORD_LABEL"] }}" value="" type="password" aria-label="Username" aria-describedby="pwd-addon">
+    </div>
+    <div class="form-group mb-3 text-right">
+        <button type="submit" name="login" class="btn btn-primary">Login</button>
+    </div>
+</form>
+<a href="forgetpassword.php" class="forget-pass-link">{{ lang["LOGIN_FORGETPASSWORD_LABEL"] }}</a>

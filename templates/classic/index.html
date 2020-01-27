@@ -1,0 +1,18 @@
+{#
+    Section: Index
+    Owner: darkfoxdeveloper@gmail.com
+#}
+{% import 'box.html' as box %}
+{% include 'head.html' %}
+<!-- #BEGIN | CONTENT OF INDEX PAGE -->
+    <div id="content" class="row text-center">
+        <div class="col-xs-12 col-lg-9 p-0">
+            {% for new in news %}
+                {{box.generate(new.name, new.description, '')}}
+            {% endfor %}
+        </div>
+         {% include 'sidebar.html' %}
+    </div>
+</div>
+<!-- #END | CONTENT OF INDEX PAGE -->
+{% include 'footer.html' %}

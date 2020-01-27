@@ -1,0 +1,324 @@
+{#
+    Section: Head
+    Owner: darkfoxdeveloper@gmail.com
+#}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>{{constant('PAGE_TITLE')}}</title>
+	<meta charset="UTF-8"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="{{constant('APP_PATH')}}resources/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{constant('APP_PATH')}}resources/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{constant('APP_PATH')}}resources/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="{{constant('APP_PATH')}}resources/images/favicons/manifest.json">
+	<link rel="mask-icon" href="{{constant('APP_PATH')}}resources/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="author" content="darkfoxdeveloper@gmail.com" />
+	<meta name="copyright" content="Copyright OpenConquer 2017 ReFixedPage" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<base href="{{constant('APP_PATH')}}">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<!--<link rel="stylesheet" type="text/css" href="{{constant('APP_PATH')}}resources/css/style.css" />-->
+    <style>
+        @import url(https:/fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,700,600,400italic,300italic,300);
+        body {
+            font-family: "Source Sans Pro", sans-serif;
+        }
+        .top-bar-dark {
+            box-shadow: rgba(0,0,0,.6) 0 1px 3px;
+            background-color: #333;
+            height: 40px;
+        }
+        .navbar-brand {
+            font-weight: 700;
+        }
+        li.link-top {
+            line-height: 40px;
+            border-left: 1px solid #444;
+            padding: 0px 10px;
+            display: inline-block;
+        }
+        li.link-top a {
+            color: #bbb;
+            font-size: 12px;
+        }
+        li.link-top a:hover {
+            color: white;
+            text-decoration: none;
+        }
+        #footer {
+            background: #111;
+            font-size: 0.9em;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: relative;
+            clear: both;
+        }
+        #footer a {
+            color: grey;
+        }
+        #footer div {
+            color: #fff;
+        }
+        #login {
+            border: 2px solid black;
+        }
+        a.nav-link:hover {
+            color: #32c5d2 !important;
+        }
+        .center-line {
+            display: inline-block;
+            width: 70px;
+            height: 1px;
+            border-top: 1px solid #bbb;
+            margin: auto;
+        }
+
+        .colored-boxed {
+            text-align: center;
+        }
+
+        .colored-boxed i {
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            text-align: center;
+            border: 0px solid;
+            background-color: transparent;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+            font-size: 50px;
+            display: inline-block;
+        }
+
+        .colored-boxed.green i {
+            color: #32c5d2;
+            border-color: #32c5d2;
+        }
+
+        .colored-boxed.dark i {
+            color: #333;
+            border-color: #333;
+        }
+
+        .colored-boxed.blue i {
+            color: #3b5998;
+            border-color: #3b5998;
+        }
+
+        .colored-boxed.red i {
+            color: #cb2027;
+            border-color: #cb2027;
+        }
+
+        .colored-boxed h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+        }
+
+        .colored-boxed p {
+            margin-top: 10px;
+        }
+
+        .features-server {
+            background-color: #f5f5f5;
+            padding-top: 70px;
+        }
+
+        .center-heading {
+            text-align: center;
+        }
+
+        .social-twitter {
+            background-color: #00ACEE !important;
+            color: white;
+        }
+
+        .social-facebook {
+            background-color: #3B5998 !important;
+            color: white;
+        }
+
+        .social-icon {
+            border-radius: 50%;
+            -webkit-transition: -webkit-transform .8s ease-in-out;
+            transition: transform .8s ease-in-out;
+            width: 32px;
+            height: 32px;
+            border: none;
+        }
+
+        .social-icon:hover {
+            -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+        }
+
+        hr {
+            background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.2), transparent);
+            background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2), transparent);
+            border: 0;
+            height: 1px;
+            margin: 22px 0 22px 0;
+        }
+
+        .social-net a {
+            color: white;
+        }
+    </style>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+	<!-- Important JS -->	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<!-- start header -->
+<body>
+    <div class="modal" tabindex="-1" role="dialog" id="login">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{% if user_data.Username is defined %}My Profile{% else %}Login in your account{% endif %}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% if user_data.Username is defined %}
+                        <div class="text-center"><font size="4"> Welcome </font><font size="4" color="red" >{{ user_data.Username }}!</font></div>
+                            {% if not exist_character %}
+                            <font size='2'>No hay personaje!</font>
+                            {% else %}
+                            <div>
+                                <img src="faces/{{character.FaceImageURL}}" width="50" height="50" class="imgfluid d-block mw-100 mx-auto"/>
+                            </div>
+                            <div class="text-center">
+                                <p class="m-0">Level: {{character.Level}}
+                                <p class="m-0">Class: {{character.ClassName}}
+                            </div>
+                            {% endif %}
+                        <div class="text-center">
+                            <a href="panel.php" class="d-block"><i class="fa fa-server" aria-hidden="true"></i>&nbsp;{{ lang["GO_USERPANEL_LABEL"] }}</a>
+                            <a href="{{ setting["PANEL_LINK_LOGOUT"] }}" class="d-block"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;{{ lang["GO_LOGOUT_LABEL"] }}</a>
+                        </div>
+                    {% else %}
+                        {% include 'login.html' %}
+                    {% endif %}
+                    {% if error_login is defined and error_login == 1 %}
+                        <script>
+                            (function() {
+                                swal({
+                                    title: "Error",
+                                    text: "Account ID or Password are wrong.",
+                                    icon: "error",
+                                    button: "OK!",
+                                    dangerMode: false,
+                                });
+                            })();
+                        </script>
+                    {% endif %}
+                    {% if user_data.ShowSuccessLogin %}
+                        <script>
+                            (function() {
+                                swal({
+                                    title: "Login Message",
+                                    text: "Login Successfully!",
+                                    icon: "success",
+                                    button: "OK!",
+                                    dangerMode: false,
+                                });
+                            })();
+                        </script>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row top-bar-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 d-none d-sm-block py-1 social-net">
+                        <a href="{{constant("SOCIAL_URL_FACEBOOK")}}" target="_blank"><button type="button" class="social-icon social-facebook"><i class="fa fa-facebook"></i></button></a>&nbsp;<a href="{{constant("SOCIAL_URL_TWITTER")}}" target="_blank"><button type="button" class="social-icon social-twitter rounded-circle"><i class="fa fa-twitter"></i></button></a>
+                    </div>
+                    <div class="col-sm-8 text-right">
+                        <ul class="list-inline top-dark-right">
+                            <li class="link-top"><a href="forgetpassword.php"><i class="fa fa-question"></i>&nbsp;Forgot Password</a></li>
+                            {% if user_data.Username is defined %}
+                                <li class="link-top"><a href="#login"><i class="fa fa-user"></i>&nbsp;My Profile</a></li>
+                                {% else %}
+                                <li class="link-top"><a href="#login"><i class="fa fa-sign-in"></i>&nbsp;Log In</a></li>
+                                <li class="link-top"><a href="{{constant('MENU_LINK_2')}}"><i class="fa fa-user"></i>&nbsp;Sign Up</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main_wrapper" class="container-fluid">
+        <div class="container">
+            <div id="header" class="row">
+                <div class="mx-auto col-xs-12 col-sm-12 col-md-12 col-lg-12 p-0">
+                    <nav id="navi" class="navbar navbar-light bg-inverse navbar-expand-lg">
+                        <a class="navbar-brand d-inline-block align-top" href="{{constant('APP_PATH')}}">{{constant("SERVER_NAME")}}</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            {% for item_menu in items_menu %}
+                            <li class="nav-item {% if items_menu.current_page == item_menu.link %}active{% endif %} {% if item_menu.childs|length > 0 %}dropdown{% endif %}">
+                                {% if item_menu.childs|length > 0 %}
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{lang[item_menu.name]}}</a>
+                                <div class="dropdown-menu">
+                                    {% for item_menu_child in item_menu.childs %}
+                                    <a class="dropdown-item" href="{{item_menu_child.link}}">{{lang[item_menu_child.name]}}</a>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                <a class="nav-link" href="{{item_menu.link}}">
+                                    <span>
+                                        {% if loop.index == 0 %}
+                                        <i class="fa fa-home"></i>&nbsp;
+                                        {% endif %}
+                                        {% if loop.index == 1 %}
+                                        <i class="fa fa-user-plus"></i>&nbsp;
+                                        {% endif %}
+                                        {% if loop.index == 2 %}
+                                        <i class="fa fa-cloud-download"></i>&nbsp;
+                                        {% endif %}
+                                        {% if loop.index == 3 %}
+                                        <i class="fa fa-shopping-cart"></i>&nbsp;
+                                        {% endif %}
+                                        {% if loop.index == 4 %}
+                                        <i class="fa fa-trophy"></i>&nbsp;
+                                        {% endif %}
+                                        {% if loop.index == 5 %}
+                                        <i class="fa fa-star"></i>&nbsp;
+                                        {% endif %}
+                                        {{lang[item_menu.name]}}<span class="sr-only">(current)</span>
+                                    </span>
+                                </a>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="navbar navbar-default navbar-extra row">
+                <div class="col-12 text-center">
+                    {% include 'status.html' %}
+                </div>
+            </div>
+        </div>
+<!-- end header -->

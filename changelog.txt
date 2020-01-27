@@ -1,0 +1,55 @@
+OpenConquer CMS Version 2.5
+------------------------------------------
+
+Changelog:
+-----------------
+V1.0: Website base with register, downloads, rankings and buy sections
+V2.0: Add new class to profile in login, other fixes of website
+V2.1: 
+	-Responsive 99% [Soon 100%]
+	-Configuration Easy with inc/settings.php and inc/connect.php file
+	-Moduled Sections
+	-Ranking Noblity Now Detect King or Queen (Male/Female Noblity)
+	-Function for detect all classes name from ID (fixed and updated)
+	-All options of UserPanel Working 100%
+	-Recoded 60% [Some parts of the html with tables :S]
+	-AutoGenerate Tables for CMS
+V2.2:
+	-Responsive 100%
+	-OCCMS Panel Added (You can manage news now)
+	-Multilang Page (Only for editors, table list for now)
+	-AutoGenerate Title in Page
+	-Get some config from database but not 100% of config is catched from database
+	-Added Config Manager for OCCMS Panel
+	-Quick Instalation Available
+	-Recoded 70%
+V2.3:
+	-Lang Manager and Setting Manager Works 100%
+	-Fixed bugs from version 2.2
+	-Improved configuration
+	-You can configure multilang now
+	-You can change template of sections (head, header, sidebar, footer)
+	-100% english page for now (Translations for spanish soon)
+V2.4:
+	-More translation text for Lang System [90%]
+	-English and Spanish Translations integrated [100%]
+	-Template engine twig added and working
+	-New template [100%]
+V2.5:
+	-Menu Manager (Support Lang System)
+
+-----------------
+IMPORTANT
+-----------------
+*Thanks for using this page. My english is bad but like programming in english xD*
+
+If have donations: 
+	-More functions to userpanel, Admin Panel for configuration of page, Fix bugs (Example: Image background in download section is very bad, any other error you reported)
+
+Features Availables:
+	-Register Page
+	-Download Page
+	-Ranking Page
+	-Login
+	-Status Server
+	-User Panel [Change Password, Change Email, Change Storage Info]

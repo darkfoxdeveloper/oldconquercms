@@ -1,0 +1,29 @@
+{#
+    Section: Index
+    Owner: darkfoxdeveloper@gmail.com
+#}
+{% import 'box.html' as box %}
+{% include 'head.html' %}
+<!-- #BEGIN | CONTENT OF OCCMS PANEL PAGE -->
+    <div id="content" class="row text-center">
+        <div class="col-xs-12 col-lg-9 p-0">
+            <div class="superbox">
+                <div class="superbox-header">
+                    OpenConquerCMS Panel
+                </div>
+                <div class="superbox-body">
+                    {{ OCCMSPanel | raw }}
+                    {% if message is defined %}
+                        {{message|raw}}
+                    {% endif %}
+                </div>
+                <div class="superbox-footer">
+                    <div class="col-12 pl-5 pr-5"><div class="float-left"><font color="darkgreen">OpenConquerCMS: Version {{constant("VERSION")}}</font></div><div class="float-right"><a href="openconquercms_panel.php?logout=true"><button type="button" class="btn btn-dark btn-xs text-warning"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</button></a></div></div>
+                </div>
+            </div>
+        </div>
+         {% include 'sidebar.html' %}
+    </div>
+</div>
+<!-- #END | CONTENT OF OCCMS PANEL PAGE -->
+{% include 'footer.html' %}

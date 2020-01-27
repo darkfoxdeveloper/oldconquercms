@@ -1,0 +1,120 @@
+{#
+    Section: Footer
+    Owner: darkfoxdeveloper@gmail.com
+#}
+<div id="footer">
+	<div class="container">
+		<div class="row footer">
+			<div id="flying-men"></div>
+			<div class="col-sm-3 col-md-2 col-lg-2 col-3 footer-links">
+				<div>
+					<a href="{{constant('FOOTER_LINK0_HREF')}}">{{constant('FOOTER_LINK0_TITLE')}}</a>
+				</div>
+				<div>
+					<a href="{{constant('FOOTER_LINK1_HREF')}}">{{constant('FOOTER_LINK1_TITLE')}}</a>
+				</div>
+				<div>
+					<a href="{{constant('FOOTER_LINK2_HREF')}}">{{constant('FOOTER_LINK2_TITLE')}}</a>
+				</div>
+				<div>
+					<a href="{{constant('FOOTER_LINK3_HREF')}}">{{constant('FOOTER_LINK3_TITLE')}}</a>
+				</div>
+			</div>
+			<div class="col-sm-7 col-md-5 col-lg-5 col-8 footer-info">
+				{{constant('FOOTER_COPYRIGHT_HTML')|raw}}
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+<script src="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.js"></script>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey={{constant('TINYMCE_APIKEY')}}"></script>
+<script>
+$(document).ready(function() {
+	var datatable_lang = {% if constant('LANG') == "en" %} '//cdn.datatables.net/plug-ins/1.10.16/i18n/English.json'; {% endif %} {% if constant('LANG') == "es" %} '//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json'; {% endif %}
+	$('.datatable').DataTable({
+		"language": {
+			"url": datatable_lang
+		}
+	});
+	$('[data-toggle="tooltip"]').tooltip();
+	$('.superselect').select2({
+		placeholder: 'Selecciona',
+		width: "'"+$(this).attr("data-width")+"'",
+	});
+	tinymce.init({
+		selector:'.tinymce-editor',
+		theme: 'modern',
+		plugins: 'code image imagetools media paste',
+		{% if constant('LANG') != "en" %}
+        language_url: 'resources/js/tinymce/{{constant("LANG")}}.js'
+        {% endif %}
+	});
+	$(".alert-confirm").on("click", function(e) {
+		e.preventDefault();
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover this!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		}).then((willDelete) => {
+			if (willDelete) {
+				switch($(this).attr("href")) {
+					case "#delete_item_menu": {
+						var id = $(this).attr("data-item-menu-id");
+						var row_delete = $(this).parent().parent();
+						var request = $.ajax({
+							url: "requests/delete_item_menu.php",
+							method: "POST",
+							data: { item_menu_id : id },
+							dataType: "html"
+						});
+						
+						request.done(function( msg ) {
+							$(row_delete).remove();
+							swal("Good job!", "Item Menu deleted successfully", "success");
+						});
+						
+						request.fail(function( jqXHR, textStatus ) {
+							swal("The server are returned an error!", "Error from server: " + textStatus, "error");
+						});
+						break;
+					}
+					case "#delete_new": {
+						var new_id = $(this).attr("data-new-id");
+						var row_delete = $(this).parent().parent();
+						var request = $.ajax({
+							url: "requests/delete_new.php",
+							method: "POST",
+							data: { new_id : new_id },
+							dataType: "html"
+						});
+						
+						request.done(function( msg ) {
+							$(row_delete).remove();
+							swal("Good job!", "New deleted successfully", "success");
+						});
+						
+						request.fail(function( jqXHR, textStatus ) {
+							swal("The server are returned an error!", "Error from server: " + textStatus, "error");
+						});
+						break;
+					}
+				}
+			}
+		});
+	});
+	$("input[name='agree']").on("click", function(e) {
+		window.open("terms&conditions.php","mywindow","width=460,height=210")
+	});
+	$("a[href='#login']").on("click", function(e) {
+		e.preventDefault();
+		$('#login').modal('show');
+	});
+});
+</script>
+</body>
+</html>

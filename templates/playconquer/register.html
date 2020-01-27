@@ -1,0 +1,67 @@
+{#
+    Section: Register
+    Owner: darkfoxdeveloper@gmail.com
+#}
+{% import 'box.html' as box %}
+{% include 'head.html' %}
+<!-- #BEGIN | CONTENT OF REGISTER PAGE -->
+    <div id="content" class="row text-center">
+        <div class="mx-auto p-0">
+            {{box.generate(lang["SECTION0_TITLE"], '
+                <form method="POST" action="">
+                    <div align="center">
+                        <table border="0" width="351" height="198">
+                            <tbody><tr>
+                                <td>' ~ lang["REGISTER_ACCOUNT_LABEL"] ~ '</td>
+                                <td><input class="input form-control" type="username" name="username" value></td>
+                                </tr>
+                                <tr>
+                                <td>' ~ lang["REGISTER_PASSWORD_LABEL"] ~ '</td>
+                                <td><input class="input form-control" type="password" name="password" value></td>
+                                </tr>
+                                <tr>
+                                <td>' ~ lang["REGISTER_PASSWORD2_LABEL"] ~ '</td>
+                                <td><input class="input form-control" type="password" name="password2" value></td>
+                                </tr>
+                                <tr>
+                                <td>' ~ lang["REGISTER_EMAIL_LABEL"] ~ '</td>
+                                <td><input class="input form-control" type="email" name="email" value></td>
+                                </tr>
+                                <tr>
+                                <td>' ~ lang["REGISTER_SEC_QUESTION_LABEL"] ~ '</td>
+                                <td><input class="input form-control" type="text" name="question_security" value></td>
+                                </tr>
+                                <tr>
+                                <td>' ~ lang["REGISTER_SEC_ANSWER_LABEL"] ~ '</td>
+                                <td><input class="input form-control" type="text" name="answer_security" value></td>
+                                </tr>
+                                <tr>
+                                <td>' ~ lang["REGISTER_SEC_NUMBER_LABEL"] ~ '</td>
+                                <td><input class="input form-control" type="text" name="mobile_number" value></td>
+                                </tr>
+                                <tr>
+                                <td>' ~ lang["REGISTER_COUNTRY_LABEL"] ~ '</td>
+                                <td>
+                                <select class="input form-control superselect" type="text" name="country" data-width="100%">
+                                    ' ~ countrys_html ~ '
+                                </select>
+                                </td>
+                                </tr>
+                                <tr>
+                                <td><img src="captcha.php" /></td>
+                                <td><input class="input form-control" name="captcha" type="text"></td>
+                                </tr>
+                                <tr>
+                                <td><input name="agree" type="checkbox"><span><strong>&nbsp;' ~ lang["REGISTER_ACCEPTTC_LABEL"] ~ '</strong></span></td>
+                                <td><input name="submit" value="' ~ lang["REGISTER_SUBMIT_LABEL"] ~ '" class="btn btn-primary ml-5" type="submit"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            ', register_footer)}}
+        </div>
+    </div>
+</div>
+<!-- #END | CONTENT OF REGISTER PAGE -->
+{% include 'footer.html' %}

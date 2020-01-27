@@ -1,0 +1,150 @@
+{#
+    Section: Panel
+    Owner: darkfoxdeveloper@gmail.com
+#}
+{% import 'box.html' as box %}
+{% include 'head.html' %}/*
+<!-- #BEGIN | CONTENT OF PANEL PAGE -->
+    <div id="content" class="row text-center">
+        <div class="col-xs-12 col-lg-9 p-0">
+            {% if section_panel == "main" %}
+             <div class="superbox">
+                <div class="superbox-header">
+                    {{ lang["SECTION4_TITLE"] }}
+                </div>
+                <div class="superbox-body text-center">
+                    <img src="faces/{{character.FaceImageURL}}" width="50" height="50"/>
+                    <div>{{character.Name}}</div>
+                    <div>Class: {{character.ClassName}}</div>
+                    <div>Level: {{character.Level}}</div>
+                    <div>VIP Level: {{character.VIPLevel}}</div>
+                    <div>ConquerPoints: {{character.ConquerPoints}}</div>
+                    <div>Money: {{character.Money}}</div>
+                    <div>PkPoints: {{character.PKPoints}}</div>
+                    <a href="{{constant('APP_PATH')}}panel.php?section=changepassword" target="new"><button type="button" class="btn btn-info text-warning"><i class="fa fa-key" aria-hidden="true"></i>&nbsp;Change Password</button></a>
+                    <a href="{{constant('APP_PATH')}}panel.php?section=changemail" target="new"><button type="button" class="btn btn-info text-warning"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Change Mail</button></a>
+                    <a href="{{constant('APP_PATH')}}panel.php?section=changestorageinfo" target="new"><button type="button" class="btn btn-info text-warning"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;Recover Storage Password</button></a>
+                </div>
+                <div class="superbox-footer">
+                    <div class="col-12 pl-5 pr-5"><div class="float-left"><font color="darkgreen">OpenConquerCMS: Version {{constant("VERSION")}}</font></div><div class="float-right"><a href="openconquercms_panel.php?logout=true"><button type="button" class="btn btn-dark btn-xs text-warning"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</button></a></div></div>
+                </div>
+            </div>
+            {% endif %}
+            {% if section_panel == "changemail" %}
+            <div class="superbox">
+                <div class="superbox-header">
+                    {{ lang["SECTION4_TITLE"] }} - Change Mail
+                </div>
+                <div class="superbox-body text-center">
+                    <form method='post' action=''>
+                        <div align="center">
+                            <table border='0' width='351' height='198'>
+                            <tbody><tr>
+                                    <td>{{lang["REGISTER_ACCOUNT_LABEL"]}}</td>
+                                    <td><input name="username" type="text" class="input form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>{{lang["REGISTER_PASSWORD_LABEL"]}}</td>
+                                    <td><input name="password" type="Password" class="input form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>New {{lang["REGISTER_EMAIL_LABEL"]}}</td>
+                                    <td><input name="mail" type="email" class="input form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td>Confirm New {{lang["REGISTER_EMAIL_LABEL"]}}</td>
+                                    <td><input name="mail2" type="email" class="input form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input name="submit_changemail" value="Change email" style='color: #F2F3F4; font-family: MS Sans Serif; font-size: 10pt; border-style: ridge; border-width: 3; background-color: #000000;' type="submit"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </form>
+                </div>
+                <div class="superbox-footer">
+                    <div class="col-12 pl-5 pr-5"><div class="float-left"><font color="darkgreen">OpenConquerCMS: Version {{constant("VERSION")}}</font></div><div class="float-right"><a href="openconquercms_panel.php?logout=true"><button type="button" class="btn btn-dark btn-xs text-warning"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</button></a></div></div>
+                </div>
+            </div>
+            {% endif %}
+            {% if section_panel == "changepassword" %}
+            <div class="superbox">
+                <div class="superbox-header">
+                    {{ lang["SECTION4_TITLE"] }} - Change Password
+                </div>
+                <div class="superbox-body text-center">
+                    <form method='post' action=''>
+                        <div align="center">
+                            <table border='0' width='351' height='198'>
+                                <tbody><tr>
+                                        <td>{{lang["REGISTER_ACCOUNT_LABEL"]}}</td>
+                                        <td><input name="username" type="text" class="input form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Old {{lang["REGISTER_PASSWORD_LABEL"]}}</td>
+                                        <td><input name="oldpassword" type="Password" class="input form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>New {{lang["REGISTER_PASSWORD_LABEL"]}}</td>
+                                        <td><input name="password" type="Password" class="input form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Confirm New {{lang["REGISTER_PASSWORD_LABEL"]}}</td>
+                                        <td><input name="password2" type="password" class="input form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><input name="submit_changepwd" value="Change password" style='color: #F2F3F4; font-family: MS Sans Serif; font-size: 10pt; border-style: ridge; border-width: 3; background-color: #000000;' type="submit"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+                <div class="superbox-footer">
+                    <div class="col-12 pl-5 pr-5"><div class="float-left"><font color="darkgreen">OpenConquerCMS: Version {{constant("VERSION")}}</font></div><div class="float-right"><a href="openconquercms_panel.php?logout=true"><button type="button" class="btn btn-dark btn-xs text-warning"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</button></a></div></div>
+                </div>
+            </div>
+            {% endif %}
+            {% if section_panel == "changestorageinfo" %}
+            <div class="superbox">
+                <div class="superbox-header">
+                    {{ lang["SECTION4_TITLE"] }} - Recover Storage Password
+                </div>
+                <div class="superbox-body text-center">
+                    <form method='post' action=''>
+                        <div align="center">
+                            <table border='0' width='351' height='198'>
+                                <tbody><tr>
+                                        <td>{{lang["REGISTER_ACCOUNT_LABEL"]}}</td>
+                                        <td><input name="username" type="text" class="input form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{lang["REGISTER_PASSWORD_LABEL"]}}</td>
+                                        <td><input name="password" type="Password" class="input form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><input name="submit_recoverstoragepwd" value="View storage password" style='color: #F2F3F4; font-family: MS Sans Serif; font-size: 10pt; border-style: ridge; border-width: 3; background-color: #000000;' type="submit"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+                <div class="superbox-footer">
+                    <div class="col-12 pl-5 pr-5"><div class="float-left"><font color="darkgreen">OpenConquerCMS: Version {{constant("VERSION")}}</font></div><div class="float-right"><a href="openconquercms_panel.php?logout=true"><button type="button" class="btn btn-dark btn-xs text-warning"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</button></a></div></div>
+                </div>
+            </div>
+            {% endif %}
+            {% if msg_alert is defined and not empty %}
+                {{msg_alert|raw}}
+            {% endif %}
+        </div>
+         {% include 'sidebar.html' %}
+    </div>
+</div>
+<!-- #END | CONTENT OF PANEL PAGE -->
+{% include 'footer.html' %}

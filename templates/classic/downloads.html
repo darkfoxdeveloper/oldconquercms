@@ -1,0 +1,24 @@
+{#
+    Section: Downloads
+    Owner: darkfoxdeveloper@gmail.com
+#}
+{% import 'box.html' as box %}
+{% include 'head.html' %}
+<!-- #BEGIN | CONTENT OF DOWNLOADS PAGE -->
+    <div id="content" class="row text-center">
+        <div class="col-xs-12 col-lg-9 p-0">
+            {{box.generate(lang["SECTION1_TITLE"], '
+            <div class="text-center">
+                <div><img class="imgfluid d-block mw-100" src="'~constant("APP_PATH")~'resources/images/client.png" /></div>
+                <p class="m-0">'~lang["DOWNLOADS_CLIENT_TEXT"]~'</p>
+                <div><a href="'~setting["DOWNLOAD_LINK_CLIENT"]~'" target="_blank"><img src="'~constant("APP_PATH")~'resources/images/downloadbutton.png" /></a></div>
+                <p class="m-0">'~lang["DOWNLOADS_PATCH_TEXT"]~'</p>
+                <div><a href="'~setting["DOWNLOAD_LINK_PATCH"]~'" target="_blank"><img src="'~constant("APP_PATH")~'resources/images/downloadbutton.png" /></a></div>
+            </div>
+            ', '')}}
+        </div>
+         {% include 'sidebar.html' %}
+    </div>
+</div>
+<!-- #END | CONTENT OF DOWNLOADS PAGE -->
+{% include 'footer.html' %}

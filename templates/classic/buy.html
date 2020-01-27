@@ -1,0 +1,45 @@
+{#
+    Section: Buy
+    Owner: darkfoxdeveloper@gmail.com
+#}
+
+{% import 'box.html' as box %}
+{% include 'head.html' %}
+<!-- #BEGIN | CONTENT OF BUY PAGE -->
+    <div id="content" class="row text-center">
+        <div class="col-xs-12 col-lg-9 p-0">
+            <div class="superbox">
+                <div class="superbox-header">
+                    {{lang["SECTION2_TITLE"]}}
+                </div>
+                <div class="superbox-body">
+                    <div class="text-center">
+                        Empty. You can edit this section in buy.php
+                        <div class="text-danger">¡Cooming soon this section will be automated!</div>
+                        {% for buy_item in buy_items %}
+                        <div class="row">
+                            <div class="col-4 col-md-2">
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <img src="{{buy_item.image}}" width="100%" class="imgfluid d-block mw-100">
+                                    <input type="hidden" name="business" value="cristian14rap@gmail.com">
+                                    <input type="hidden" name="cmd" value="_xclick">
+                                    <input type="hidden" name="item_name" value="{{buy_item.description}}">
+                                    <input type="hidden" name="amount" value="{{buy_item.price}}">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="image" name="submit" border="0"
+                                    src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_107x26.png" class="imgfluid d-block mw-100 mt-2" alt="Buy Now">
+                                </form>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="superbox-footer">
+                </div>
+            </div>
+        </div>
+        {% include 'sidebar.html' %}
+    </div>
+</div>
+<!-- #END | CONTENT OF BUY PAGE -->
+{% include 'footer.html' %}

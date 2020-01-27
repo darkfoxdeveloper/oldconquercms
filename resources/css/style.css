@@ -1,0 +1,336 @@
+/*
+Coded by DaRkFox
+darkfoxdeveloper@gmail.com
+www.openconquer.online
+CSS Based in Mobile First Technique and Bootstrap 4 Methods
+*/
+
+body {
+	margin:0;
+	padding:0;
+	background:url(../images/bg.png) no-repeat center top #4c3c30;
+	font-variant:small-caps;
+	font-family: Georgia;
+}
+
+.page-logo {
+	font-family:'Caveat Brush', cursive;
+	font-size: 6rem;
+    color: red;
+	font-weight: bold;
+}
+
+#main_wrapper {
+	margin:150px auto 0px auto;
+}
+
+#navi {
+	background:url(../images/navi.png) no-repeat;
+	background-size: 100% 98px;
+	min-height: 98px;
+}
+
+#navi ul li {
+	float:left;
+	list-style:none;
+}
+
+#navi ul li a {
+	text-shadow:0px 0px 4px black;
+	color:#7f6e50;
+	text-decoration:none;
+	font-size:14pt;
+	margin-top: 0.7rem;
+	background: url(../images/navi.png);
+	background-size: 100% 100%;
+	display:block;
+	padding-top:15px;
+	text-align:center;
+}
+
+#navi ul li a span:hover {
+	background:url(../images/navi_hover.png) repeat-x;
+	display:block;
+}
+
+.navbar-brand {
+	margin: 0;
+}
+
+.navbar-brand>img {
+	width: 72px;
+	height: 72px;
+}
+
+.main-full-height {
+	background-size: 222% 100% !important;
+	padding-bottom: 3rem;
+}
+
+.main {
+	background:url(../images/main.png);
+	background-repeat: no-repeat;
+	background-size: 222% 180px;
+	min-height: 180px;
+}
+
+.main_title {
+	color:#81693d;
+	line-height:52px;
+	text-shadow:0px 0px 4px black;
+	padding-left:30px;
+	text-align:left;
+}
+
+.main_content {
+	background-repeat:repeat-y;
+	background-position:center right;
+	color:#625845;
+	padding-left:25px;
+	padding-right:25px;
+	font-size:14px;
+}
+
+.main_bottom {
+	background-repeat:no-repeat;
+	background-position:bottom left;
+}
+
+#login {
+	background:url(../images/login.png) no-repeat;
+	background-size: 225px 100%;
+	background-position: center;
+	text-align:center;
+	padding-top:15px;
+}
+
+.button {
+	transition:all 300ms;
+	-moz-transition:all 500ms;
+	-o-transition:all 300ms;
+	-webkit-transition:all 500ms;
+}
+
+.button:hover {
+	opacity:0.9;
+}
+
+.input {
+	background:url(../images/input.png) no-repeat;
+	background-size:cover;
+	border:none;
+}
+
+.login_btn {
+	background:url(../images/login_btn.png);
+	border:none;
+	height:28px;
+	width:120px;
+	transition:all 300ms;
+	-moz-transition:all 100ms;
+	-o-transition:all 300ms;
+	-webkit-transition:all 500ms;
+}
+
+.login_btn:active {
+	background:url(../images/login_btn_hover.png);
+}
+
+.forget-pass-link {
+	font-size: 0.7rem;
+	padding-bottom: 15%;
+    display: block;
+    text-align: center;
+}
+
+#box, #box-ranking {
+	margin-top:15px;
+	background:url(../images/box.png);
+	background-repeat: no-repeat;
+	background-size: 220px auto;
+	background-position: center top;
+	padding-top:20px;
+	padding-left:12px;
+	font-size:10pt;
+	color:#956a1c;
+	word-break: break-word;
+}
+
+#box .h, #box-ranking .h {
+	font-size:11pt;
+	color:#694b14;
+	border-bottom:2px solid #a38136;
+}
+
+#box .text, #box-ranking .text {
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-right:10px;
+}
+
+#box table, #box-ranking table {
+	padding-top:5px;
+	width:100%;
+}
+
+#footer {
+	clear:both;
+	padding-top: 2%;
+	width:100%;
+	background:url(../images/footer.png) no-repeat center;
+}
+
+.footer {
+	padding-top:59px;
+	color:#3e3527;
+	font-size:10pt;
+	position: relative;
+	left: 0rem;
+}
+
+.footer a {
+	color:#7f6e50;
+	text-decoration:none;
+}
+
+#flying-men {
+	background:url(../images/flying-men_logo.png);
+	height:52px;
+	width:64px;
+	position: absolute;
+}
+
+/* SUPERBOX */
+.superbox {
+	padding-top: 0.5rem;
+}
+
+.superbox > .superbox-header {
+	height: 38px;
+	padding-top: 1rem;
+	color: #7f6e50;
+	font-size: 1.5rem;
+	background-image: url(../images/superbox-header.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.superbox > .superbox-body {
+	padding-top: 1.5rem;
+    padding-left: 1.5rem;
+	padding-bottom: 1rem;
+    text-align: left;
+	color: white;
+	background-image: url(../images/superbox-body.png);
+	min-height: 172px;
+	background-size: 100% 342px;
+	background-repeat: no-repeat;
+}
+
+.superbox > .superbox-footer {
+	height: 38px;
+	color: #7f6e50;
+	text-align: right;
+	background-image: url(../images/superbox-footer.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#navi ul li div.dropdown-menu {
+	margin: 0;
+	padding: 0;
+	background-color: transparent !important;
+}
+
+#navi ul li div.dropdown-menu a {
+	margin: 0;
+    background-image: url(../images/navi.png) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+	margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* 
+	Extra small devices (portrait phones, less than 576px)
+	No media query since this is the default in Bootstrap
+*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	.footer {
+		left: -4rem;
+		padding-top: 5rem;
+	}
+	#flying-men {
+		position: relative;
+	}
+	#navi ul li a {
+		margin-top: 0.7rem;
+	    background: url(../images/navi.png);
+	    background-size: 100% 100%;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.footer {
+		left: 2rem;
+		padding-top: 2rem;
+	}
+	#flying-men {
+		position: relative;
+	}
+	#navi ul li a {
+		margin-top: 0;
+	    background: none;
+	}
+	.main {
+		min-height: 180px;
+	}
+	.superbox > .superbox-body {
+		background-size: 100% 100%;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+	.footer {
+		left: 10rem;
+	}
+	#flying-men {
+		position: relative;
+	}
+	.main {
+		min-height: 180px;
+	}
+	#login {
+		background-size: 100% 100%;
+	}
+	.superbox > .superbox-body {
+		background-size: 100% 100%;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+	.footer {
+		left: 15rem;
+	}
+	#flying-men {
+		position: relative;
+	}
+	#navi {
+		height:76px;
+	}
+	.main {
+		min-height: 178px;
+	}
+	#login {
+		background-size: 100% 100%;
+	}
+	.superbox > .superbox-body {
+		background-size: 100% 100%;
+	}
+}

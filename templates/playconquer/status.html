@@ -1,0 +1,16 @@
+{#
+    Section: Status
+    Owner: darkfoxdeveloper@gmail.com
+#}
+<strong>        
+    {% if server_status == "offline" %}
+        <font color='darkred'>OFFLINE</font>
+    {% else %}
+        <font color='darkgreen'>ONLINE</font>
+    {% endif %}
+</strong>
+<span> | </span>
+<strong>Players Online:</strong>
+<span class="online-count"> {{ players_online }} </span>
+<span> | </span>
+<span><strong>Accounts Registered: </strong>{{ registered_accounts }}</span>

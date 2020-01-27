@@ -1,0 +1,8 @@
+{#
+    Section: Ranking Index
+    Owner: darkfoxdeveloper@gmail.com
+#}
+{% for player in index_ranking %}
+<div class="row"><div class="col-8 p-0">{{ player.Name }}</div><div class="col-2 p-0 pl-1">{{ player.Level }}</div></div>
+{% endfor %}
+<div id="ranking-link"><a href="{{ constant("APP_PATH")}}ranking.php">{{lang["INDEX_FULL_RANKING_TEXT"]}}</a></div>

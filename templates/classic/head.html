@@ -1,0 +1,63 @@
+{#
+    Section: Head
+    Owner: darkfoxdeveloper@gmail.com
+#}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>{{constant('PAGE_TITLE')}}</title>
+	<meta charset="UTF-8"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="{{constant('APP_PATH')}}resources/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{constant('APP_PATH')}}resources/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{constant('APP_PATH')}}resources/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="{{constant('APP_PATH')}}resources/images/favicons/manifest.json">
+	<link rel="mask-icon" href="{{constant('APP_PATH')}}resources/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="author" content="darkfoxdeveloper@gmail.com" />
+	<meta name="copyright" content="Copyright OpenConquer 2017 ReFixedPage" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<base href="{{constant('APP_PATH')}}">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{constant('APP_PATH')}}resources/css/style.css" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+	<!-- Important JS -->	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<!-- start header -->
+<body>
+    <div id="main_wrapper" class="container">
+        <div id="header" class="row">
+            <div class="mx-auto col-xs-12 col-sm-12 col-md-12 col-lg-12 p-0">
+                <div class="page-logo">{{constant('SERVER_NAME')}}</div>
+                <nav id="navi" class="navbar navbar-light bg-inverse navbar-expand-lg">
+                    <a class="navbar-brand d-inline-block align-top" href="{{constant('APP_PATH')}}"><img src="{{constant('APP_PATH')}}resources/images/favicons/android-chrome-192x192.png" class="imgfluid"/></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        {% for item_menu in items_menu %}
+                            <li class="nav-item{% if items_menu.current_page == item_menu.link %} active{% endif %}{% if item_menu.childs|length > 0 %} dropdown{% endif %}">
+                                {% if item_menu.childs|length > 0 %}
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{item_menu.link}}" role="button" aria-haspopup="true" aria-expanded="false">{{lang[item_menu.name]}}</a>
+                                <div class="dropdown-menu">
+                                    {% for item_menu_child in item_menu.childs %}
+                                    <a class="dropdown-item" href="{{item_menu_child.link}}">{{lang[item_menu_child.name]}}</a>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                <a class="nav-link" href="{{item_menu.link}}"><span>{{lang[item_menu.name]}}<span class="sr-only">(current)</span></span></a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+<!-- end header -->

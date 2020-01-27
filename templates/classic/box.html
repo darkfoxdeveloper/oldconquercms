@@ -1,0 +1,18 @@
+{#
+    Helper: Box
+    Owner: darkfoxdeveloper@gmail.com
+    You can use this helper for generate Box in other template files
+#}
+{% macro generate(header, body, footer) %}
+    <div class="superbox">
+        <div class="superbox-header">
+            {{ header | raw }}
+        </div>
+        <div class="superbox-body">
+            {{ body | raw }}
+        </div>
+        <div class="superbox-footer">
+            {{ footer | raw }}
+        </div>
+    </div>
+{% endmacro %}

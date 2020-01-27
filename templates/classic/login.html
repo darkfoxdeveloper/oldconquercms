@@ -1,0 +1,39 @@
+{#
+    Section: Login
+    Owner: darkfoxdeveloper@gmail.com
+#}
+<div class="text-right mx-auto">
+{% if user_data.Username is defined %}
+<div class="text-center"><font size="4"> Welcome </font><font size="4" color="red" >{{ user_data.Username }}!</font></div>
+    {% if not exist_character %}
+    <font size='2'>No hay personaje!</font>
+    {% else %}
+    <div>
+        <img src="faces/{{character.FaceImageURL}}" width="50" height="50" class="imgfluid d-block mw-100 mx-auto"/>
+    </div>
+    <div class="text-center">
+        <p class="m-0">Level: {{character.Level}}
+        <p class="m-0">Class: {{character.ClassName}}
+    </div>
+    {% endif %}
+<div>
+    <a href="panel.php" class="d-block"><i class="fa fa-server" aria-hidden="true"></i>&nbsp;{{ lang["GO_USERPANEL_LABEL"] }}</a>
+    <a href="{{ setting["PANEL_LINK_LOGOUT"] }}" class="d-block"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;{{ lang["GO_LOGOUT_LABEL"] }}</a>
+</div>
+{% else %}
+<form action="" method="post" class="mr-auto col-md-12">
+    <div class="form-group">
+        <input name="user" class="input form-control" placeholder="{{ lang["LOGIN_ACCOUNT_LABEL"] }}" value="" type="text">
+    </div>
+    <div class="form-group">
+        <input name="pass" class="input form-control" placeholder="{{ lang["LOGIN_PASSWORD_LABEL"] }}" value="" type="password">
+    </div>
+    <div class="form-group">
+        <button type="submit" name="login" class="login_btn button"></button>
+    </div>
+</form>
+    {% if error_login is defined and error_login == 1 %}
+        <div style="color:#FF0000" class="px-3">Account ID or Password are wrong.</div>
+    {% endif %}
+<a href="forgetpassword.php" class="forget-pass-link">{{ lang["LOGIN_FORGETPASSWORD_LABEL"] }}</a>
+{% endif %}
